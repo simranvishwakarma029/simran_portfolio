@@ -1,0 +1,126 @@
+import { useEffect } from "react";
+import gsap from "gsap";
+import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
+
+export default function Hero() {
+  useEffect(() => {
+    // Fade stagger for text
+    gsap.from(".Fade_Stagger", {
+      opacity: 0,
+      y: 20,
+      stagger: 0.2,
+      duration: 1,
+      ease: "power3.out",
+    });
+
+    // Spring effect for avatar
+    gsap.from(".Spring_Up", {
+      scale: 0.5,
+      opacity: 0,
+      duration: 1,
+      delay: 0.5,
+      ease: "elastic.out(1, 0.6)",
+    });
+
+    // Social icons
+    gsap.from(".social-icon", {
+      opacity: 0,
+      y: 10,
+      duration: 0.8,
+      delay: 1,
+      stagger: 0.2,
+      ease: "back.out(1.7)",
+    });
+  }, []);
+
+  return (
+    <section
+      id="Hero"
+      className="w-full min-h-screen px-6 py-4 bg-black flex justify-evenly lg:justify-around items-center flex-col-reverse lg:flex-row overflow-hidden text-white"
+    >
+      {/* Left Side Content */}
+      <div className="w-full lg:w-fit flex flex-col gap-8 items-center lg:items-start text-center lg:text-left">
+        <div className="text-[18px] lg:text-[26px]">
+          <p className="Fade_Stagger">Hi! my name is,</p>
+          <h1 className="Fade_Stagger font-bold text-6xl lg:text-[9rem] leading-tight bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
+            Simran.
+          </h1>
+          <p className="Fade_Stagger">I'm a Software Developer.</p>
+          <p className="Fade_Stagger">
+            I create{" "}
+            <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent font-bold">
+              Exciting Stuff
+            </span>{" "}
+            on the Internet.
+          </p>
+        </div>
+
+        {/* Social Icons */}
+        <div className="Fade_Stagger flex justify-center lg:justify-start items-center w-full gap-8 py-4 text-2xl">
+          <a
+            href="https://github.com/simranvishwakarma029"
+            target="_blank"
+            className="social-icon hover:text-purple-400"
+          >
+            <FaGithub />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/simran-vishwakarma-07b44422b/"
+            target="_blank"
+            className="social-icon hover:text-purple-400"
+          >
+            <FaLinkedin />
+          </a>
+          <a
+            href="https://x.com/simran_0026"
+            target="_blank"
+            className="social-icon hover:text-purple-400"
+          >
+            <FaTwitter />
+          </a>
+           <a
+            href="mailto:simranvishwakarma029@gmail.com"
+            className="hover:text-pink-400 transition"
+          >
+            <FaEnvelope />
+          </a>
+        </div>
+      </div>
+
+      {/* Right Side Orbit Animation */}
+      <div className="Hero_Orbit relative flex items-center justify-center w-[320px] lg:w-[500px] aspect-square">
+        <div className="Spring_Up flex items-center justify-center w-[50%] aspect-square rounded-full z-10">
+          <img
+            src="/assets/images/bg-sim4.png"
+            alt="Simran"
+            className="object-cover rounded-full shadow-[0_0_40px_rgba(168,85,247,0.8)]"
+            width="250"
+            height="250"
+          />
+        </div>
+
+     {/* Orbit Trails */}
+<div className="Spring_Up absolute inset-0 animate-spin-slow">
+  <span className="Orbit_Dot absolute top-0 left-1/2 -ml-2 w-5 h-5 rounded-full shadow-lg 
+    bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 animate-pulse"></span>
+</div>
+
+<div className="Spring_Up absolute inset-0 animate-spin-slow-reverse">
+  <span className="Orbit_Dot absolute bottom-0 left-1/2 -ml-2 w-5 h-5 rounded-full shadow-lg 
+    bg-gradient-to-r from-yellow-400 via-red-500 to-pink-600 animate-pulse"></span>
+</div>
+
+<div className="Spring_Up absolute inset-0 animate-spin-slow">
+  <span className="Orbit_Dot absolute right-0 top-1/2 -mt-2 w-5 h-5 rounded-full shadow-lg 
+    bg-gradient-to-r from-green-400 via-teal-500 to-blue-500 animate-pulse"></span>
+</div>
+
+<div className="Spring_Up absolute inset-0 animate-spin-slow-reverse">
+  <span className="Orbit_Dot absolute left-0 top-1/2 -mt-2 w-5 h-5 rounded-full shadow-lg 
+    bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 animate-pulse"></span>
+</div>
+
+      </div>
+    </section>
+  );
+}

@@ -1,0 +1,24 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+
+// React Components
+import Footer from "../components/Footer.tsx";
+import Hero from "../components/react/Hero.tsx";
+import About from "../components/react/About.tsx";
+import Skills from "../components/react/Skills.tsx";
+import Projects from "../components/react/Projects.tsx";
+import Contact from "../components/react/Contact.tsx";
+---
+
+<Base>
+  <Header />
+  <main>
+    <Hero client:load />
+    <About client:visible />
+    <Skills client:visible />
+    <Projects client:visible />
+    <Contact client:visible />
+  </main>
+  <Footer client:load />
+</Base>
