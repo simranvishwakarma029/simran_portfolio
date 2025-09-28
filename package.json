@@ -6,14 +6,14 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "npx astro build",
+    "build": "astro build",
     "preview": "astro preview",
     "format": "prettier --write ."
   },
   "dependencies": {
     "@astrojs/react": "^3.6.0",
     "@astrojs/tailwind": "^5.1.0",
-    "astro": "^4.13.0",
+    "astro": "^4.16.19",
     "framer-motion": "^11.2.0",
     "gsap": "^3.12.5",
     "react": "^18.3.1",
@@ -27,6 +27,6 @@
     "tailwindcss": "^3.4.10"
   },
   "engines": {
-  "node": ">=18.14.0"
-}
+    "node": ">=18.14.0"
+  }
 }
